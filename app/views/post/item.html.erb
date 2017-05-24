@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <h1><%= @one_post.id %>번째 글입니다.</h1><hr>
+  <h3><%= @one_post.title %></h3><br><br>
+  <p><%= @one_post.content %></p>
+</div>
+<div class="container">
+  <a href="/show">게시판으로 돌아가기</a><br>
+  <a href="/update_view/<%= @one_post.id %>">수정 </a>
+  <a href="/destroy/<%= @one_post.id %>">삭제</a>
+</div>
+<div class="container mt-5">
+  <h5>댓글댓글</h5>
+  <form action="/item/<%= @one_post.id%>/comment/create" method="post">
+    <input type="text" name="reply">
+    <button type="submit">Submit</button>
+  </form>
+<div class="row mt-3"></div>
+  <p>댓글이 댓글바글</p><br>
+    <% @comment.each do |c| %>
+      <p> -> <%= c.reply %> </p>
+      <form action="/item/<%= @one_post.id%>/comment/destroy/<%= c.id %>" method="post">
+        <button type="submit">삭제</button>
+      </form>
+    <% end %>
+  <hr>
+</div>
