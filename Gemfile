@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem "fog-aws"
 gem 'carrierwave', '~> 1.0'

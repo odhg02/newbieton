@@ -1,5 +1,5 @@
 class PostController < ApplicationController
-
+  before_action :require_log_in
   def show
 
     @all_post = Post.all
@@ -17,8 +17,15 @@ class PostController < ApplicationController
 
     post = Post.new
 
+    uploader = NaflaUploader.new
+    file = params[:pic]
+    uploader.store!(file)
+
     post.title = params[:title]
     post.content = params[:content]
+    post.user = current_user
+    post.image_url = uploader.url
+
     post.save
 
     redirect_to "/item/#{post.id}"

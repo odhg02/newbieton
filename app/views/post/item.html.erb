@@ -1,7 +1,9 @@
 <div class="container mt-5">
   <h1><%= @one_post.id %>번째 글입니다.</h1><hr>
+  <p><%= @one_post.user.email %></p>
   <h3><%= @one_post.title %></h3><br><br>
   <p><%= @one_post.content %></p>
+  <img src="<%= @one_post.image_url %>">
 </div>
 <div class="container">
   <a href="/show">게시판으로 돌아가기</a><br>

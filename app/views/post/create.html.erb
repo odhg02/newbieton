@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <h2>글 작성 화면입니당.</h2>
-  <form action="/write" method="post">
+  <form action="/write" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="exampleInputEmail1">글 제목</label>
       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="title">
@@ -10,6 +10,11 @@
       <label for="exampleTextarea">내용</label>
       <textarea class="form-control" id="exampleTextarea" rows="8" name="content"></textarea>
     </div>
+
+  <div class="form-group">
+      <label for="exampleInputFile">File input</label>
+      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" accept="image/*" name="pic">
+   </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
