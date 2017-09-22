@@ -44,6 +44,7 @@ class NaflaUploader < CarrierWave::Uploader::Base
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
     Time.now.to_f.to_s + (0...8).map { (65 + rand(26)).chr }.join + "." + file.extension if original_filename
+    
   end
 
 end
