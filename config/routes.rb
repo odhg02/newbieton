@@ -25,8 +25,7 @@ Rails.application.routes.draw do
   post '/item/:post_id/comment/create' => 'comment#create'
   # Destroy 댓글 삭제
   post '/item/:post_id/comment/destroy/:comment_id' => 'comment#destroy'
-
-
+  get '/item/:post_id/comment/destroy/:comment_id' => 'comment#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

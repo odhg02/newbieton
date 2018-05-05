@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="login.scss">
+        <title>Join Together</title>
+        <%= csrf_meta_tags %>
+        <style>
+          @font-face { font-family: 'GyeonggiBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
+          * { font-family: 'GyeonggiBatang'; }
+        </style>
+    </head>
+    
+    <body class="container">
+
+    <div class="col-lg-1 col-offset-6 centered">
+        <img data-src="holder.js/100x100" alt="" />
+    </div>
+   
+<div align="center">   
+<table frame = void>
+  <tr>
+    <td>
+      <h2>로그인</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :이메일 %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :패스워드 %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+  
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :아이디기억 %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "로그인" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+    </td>
+    
+    <td>
+      <img src = "/logo.jpg" width = "400" height = "400" style = "float: right;" alt = "로고"></img>
+    </td>
+  </tr>
+</table>
+</div> 
+
+
+
+  
+  
+
+
+<body>
+
+<div class="bg"></div>
+
+
+</body>
+</html>
+

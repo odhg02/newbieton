@@ -1,0 +1,55 @@
+ <head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="login.scss">
+  <title>Join Together</title>
+  <%= csrf_meta_tags %>
+
+  </head>
+    
+  <body class="container">
+    
+  <div class="col-lg-1 col-offset-6 centered">
+  <img data-src="holder.js/100x100" alt="" />
+  </div>
+
+  <div align="center">
+  <table frame = void> 
+  <tr>
+    <td>
+      <h2>회원가입</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+       <div class="field">
+      <%= f.label :아이디 %><br />
+      <%= f.email_field :email, autofocus: true %>
+      </div>
+
+  <div class="field">
+    <%= f.label :비밀번호 %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> 자 이상)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"비밀번호 확인" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "회원가입" %>
+  </div>
+    <% end %>
+
+  <%= render "devise/shared/links" %>
+
+    </td>
+    <td>
+      <img src = "/logo.jpg" width = "400" height = "400" style = "float: right;" alt = "로고"></img>
+    </td>
+  </tr>
+</table>
+</div>
+ 
+

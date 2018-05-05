@@ -1,5 +1,15 @@
+<link rel="stylesheet" type="text/css" href="create.scss">
+    <style>
+      @font-face { font-family: 'GyeonggiBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
+* {font-family: 'GyeonggiBatang'; }
+     </style>
 <div class="container mt-5">
-  <h2>글 작성 화면입니당.</h2>
+  <h1><center><img src="/logo2.jpg" width="80" height="80"> &nbsp Join Together </center></h1>
+
+  <hr>
+
+    <h3 style="text-align:center">가족 등록 하기</h3>
+      <br />
   <form action="/write" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="exampleInputEmail1">글 제목</label>
@@ -12,11 +22,10 @@
     </div>
 
   <div class="form-group">
-      <label for="exampleInputFile">File input</label>
       <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" accept="image/*" name="pic">
    </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">작성완료</button>
   </form>
   <a href="/show">돌아가기</a>
 </div>

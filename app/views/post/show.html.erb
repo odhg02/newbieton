@@ -1,14 +1,120 @@
-<a href="/users/sign_out">Logout</a>
+  <style>
+      @font-face { font-family: 'GyeonggiBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
+* {font-family: 'GyeonggiBatang'; }
+     </style>
+<a href="/users/sign_out" style = "float: right;"><%= current_user.email %>님 로그아웃</a>
 <div class="container mt-5">
-  <h1>게시판 입니당</h1>
-  <a href="/">돌아가기</a><br>
-  <a href="/create">글 쓰러 가기</a>
+          <h1> <center><img src="/logo2.jpg" width="80" height="80"> &nbsp Join Together</h1>
+  <br />       
+  
 </div>
-<div class="container mt-5">
-  <h3>글 목록</h3>
-  <% @all_post.each do |x| %>
-  <p>글 번호: <%= x.id %></p>
-  <h2><a href="/item/<%= x.id %>"><%= x.title %></a></h2><hr>
-  <% end %>
 
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="post.scss">
+        <title>Join Together</title>
+        <%= csrf_meta_tags %>
+
+    </head>
+    <body id = "body">
+ 
+         <div id="container">
+         <div class="row">
+        <% @all_post.each do |x| %>
+         <div class="col-lg-4 portfolio-item" >
+          <div class="card w-100 h-100" style=" border-top:1px groove; border-bottom:1px groove; border-left:1px groove; border-right:1px groove; padding:1px;">
+            <h2><a href="/item/<%= x.id %>"> <center><img style="width:380px; height:200px; margin:5px 5px 5px 5px" src=<%=x.image_url%> ></center></a></h2><hr>
+               <center><strong><p><%=x.title%></center></strong></p>
+            </div>
+          </div>
+          <%end%>
+          </div>
+            <div class="button_fam">
+            <form action="/create" method="get">
+            <input type = "button" value = "가족등록하기" class="btn btn-primary" > 
+            </form>
+          <!--<a href="/create"><center>가족 등록하기</a>-->
+          </div>
+      <!--   <div class="col-lg-4 portfolio-item">-->
+      <!--    <div class="card w-100 h-100" style="border-top:1px groove; border-bottom:1px groove; border-left:1px groove; border-right:1px groove; padding:1px;" >-->
+      <!--      <a href="/mainhome/picture2" target="_blank"><center><img class="card-img-top" style="width:380px; height:200px; margin:5px 5px 5px 5px" src="https://1.bp.blogspot.com/-TFYckbYSBSA/Wq50IbprhEI/AAAAAAAAGyQ/UUXnOad00cQv9X6QmrJQHJNsV-hxmkB1QCLcBGAs/s400/woman-3231893_1920.jpg"/ ></center></a>-->
+      <!--          <br />-->
+      <!--          <a href="#">#영국</a> <a href="#">#캠핑</a>-->
+      <!--        <p class="card-text">-->
+      <!--          영국 catherine 가족 <br >저희 가족은 캠핑을 좋아합니다. <br>저희나라 영국으로 놀러오세여!! <br>-->
+      <!--          email: <a href> fhfparkwhr@gmail.com</a> -->
+      <!--        </p>-->
+      <!--      </div>-->
+      <!--    </div>-->
+                   
+                   
+      <!--  <div class="col-lg-4 portfolio-item">-->
+      <!--    <div class="card w-100 h-100" style="border-top:1px groove; border-bottom:1px groove; border-left:1px groove; border-right:1px groove; padding:1px;" >-->
+      <!--      <a href="/mainhome/picture3" target="_blank"><center><img class="card-img-top" style="width:380px; height:200px; margin:5px 5px 5px 5px" src="https://images.1plus1.ua/uploads/site/000/152/321/a31d08e164641e21ba9b892ffa6a3d57.jpg"/ ></center></a>-->
+      <!--          <br />-->
+      <!--          <a href="#">#미국</a> <a href="#">#헐리우드</a>-->
+              
+      <!--        <p class="card-text">-->
+      <!--          미국 david 가족 <br >저희 가족은 헐리우드거리 걷기를 좋아합니다. <br>저희나라 미국으로 놀러오세여!! <br>-->
+      <!--          email: <a href> fhfparkwhr@gmail.com</a>  -->
+      <!--        </p>-->
+      <!--      </div>-->
+      <!--  </div>-->
+      <!-- </div> -->
+        
+      <!--  <div class="row">-->
+      <!--  <div class="col-lg-4 portfolio-item">-->
+      <!--    <div class="card w-100 h-100" style="border-top:1px groove; border-bottom:1px groove; border-left:1px groove; border-right:1px groove; padding:1px;" >-->
+      <!--      <a href="/mainhome/pictures4" target="_blank"><center><img class="card-img-top" style="width:380px; height:200px; margin:5px 5px 5px 5px" src="http://www.sheilaamelanutricionista.com/wp-content/uploads/2017/12/familia-comprando.jpg"/></center></a>-->
+      <!--          <br />-->
+      <!--          <a href="#">#일본</a> <a href="#">#온천</a>-->
+      <!--        <p class="card-text">-->
+      <!--          일본 sadako 가족 <br >저희 가족은 온천을 좋아합니다. <br>저희나라 일본으로 놀러오세여!! <br>-->
+      <!--          email: <a href> fhfparkwhr@gmail.com</a> -->
+      <!--        </p>-->
+      <!--      </div>-->
+      <!--    </div>-->
+          
+      <!--    <div class="col-lg-4 portfolio-item">-->
+      <!--    <div class="card w-100 h-100" style="border-top:1px groove; border-bottom:1px groove; border-left:1px groove; border-right:1px groove; padding:1px;">-->
+      <!--      <a href="/mainhome/pictures5" target="_blank"><center><img class="card-img-top" style="width:380px; height:200px;margin:5px 5px 5px 5px" src="https://lh3.googleusercontent.com/-JtFtjKmS3Uo/WrUAFBDuBOI/AAAAAAAABAs/DJ4cDczJTmYVLS_eRmucznCdTypeaboYQCJoC/w1920-h1619/f1d750a08c1705c59e28798a9fe8558b0bf2a302.jpg"/></center></a>-->
+      <!--         <br />-->
+      <!--          <a href="/mainhome/pictures5">#프랑스</a> <a href="#">#에펠탑</a>-->
+      <!--        <p class="card-text">-->
+      <!--          프랑스 devianc 가족 <br >저희 가족은 에펠탑을 좋아합니다. <br>저희나라 프랑스로 놀러오세여!! <br>-->
+      <!--          email: <a href> fhfparkwhr@gmail.com</a> -->
+      <!--        </p>-->
+      <!--      </div>-->
+      <!--    </div>-->
+          
+      <!--    <div class="col-lg-4 portfolio-item">-->
+      <!--    <div class="card w-100 h-100" style="border-top:1px groove; border-bottom:1px groove; border-left:1px groove; border-right:1px groove; padding:1px;">-->
+      <!--      <a href="/mainhome/pictures6" target="_blank"><center><img class="card-img-top" style="width:380px; height:200px;margin:5px 5px 5px 5px" src="https://www.minthilltimes.com/wp-content/uploads/2018/04/family-3283949_1920.jpg"/></center></a>-->
+      <!--         <br />-->
+      <!--          <a href="#">#호주</a> <a href="#">#오페라하우스</a>-->
+      <!--        <p class="card-text">-->
+      <!--          호주 Sam 가족 <br >저희 가족은 오페라하우스를 좋아합니다. <br>저희나라 호로 놀러오세여!! <br>-->
+      <!--          email: <a href> fhfparkwhr@gmail.com</a> -->
+
+      <!--        </p>-->
+      <!--      </div>-->
+      <!--    </div>-->
+      <!-- </div>-->
+      <!--</div>-->
+          </div>
+      
+    </body>
+</html>
+
+<style>
+
+.button_fam {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+</style>
